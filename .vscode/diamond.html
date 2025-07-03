@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="diamond.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <div class="navbar">
+                <div class="container">
+                    <div class="navbar-start">
+                        <div class="navbar-start_left">
+                            <ul>
+                                <li><a href="#">Контрагентам</a></li>
+                                <li><a href="#">Дизайнерам</a></li>
+                                <li><a href="#">Вакансии</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="navbar-start_logo">
+                            <img src="OJJO.png" alt="logo">
+                        </div>
+                        <div class="navbar-start_right">
+                            
+                          
+                            <input type="text" id="searchInput" placeholder="Поиск... /">
+                            
+                          
+                              
+                               <a class="registratsiya" href="registratsiya.html">Регистрация</a>
+                          
+                            <img class="icons" src="mdi_account.png" alt="contact">
+            
+
+                            <button id="likeBtn" class="btn">♡</button>
+                             <script>
+                                const likeBtn = document.getElementById("likeBtn");
+
+                                likeBtn.addEventListener("click", function () {
+                                this.classList.toggle("liked");
+                                this.innerText = this.classList.contains("liked") ? "❤️" : "♡";
+                                });
+                                </script>
+
+
+                          
+                        </div>
+                        <script>
+                       const searchInput = document.getElementById("searchInput");
+
+                       searchInput.addEventListener("input", function () {
+                       const filter = this.value.toLowerCase();
+                       const images = document.querySelectorAll(".product-grid img");
+
+                       images.forEach((img) => {
+                       const altText = img.alt.toLowerCase();
+                       if (altText.includes(filter)) {
+                       img.style.display = "inline-block";
+                       } else {
+                       img.style.display = "none";
+                       }
+                       });
+                       });
+                       </script>
+                       
+
+
+                        <div class="language">
+
+                          <button class="btn" onclick="setLang('ru')">Рус</button>
+                          <button class="btn" onclick="setLang('uz')">O‘zbek</button>
+                           <script src="diamond.js"></script>
+
+                           
+                        </div>
+       <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+      const filter = this.value.toLowerCase().trim();
+
+      const allTargets = document.querySelectorAll(
+        ".product-grid img, .products h2, .products p, .products button"
+      );
+
+      allTargets.forEach((el) => {
+        const text = el.alt ? el.alt.toLowerCase() : el.textContent.toLowerCase();
+
+        // O‘xshash so‘z bo‘lsa — highlight qilamiz
+        if (filter && text.includes(filter)) {
+          el.classList.remove("dim");
+          el.classList.add("highlight");
+        } else if (filter) {
+          el.classList.add("dim");
+          el.classList.remove("highlight");
+        } else {
+          el.classList.remove("dim");
+          el.classList.remove("highlight");
+        }
+      });
+    });
+  });
+</script>
+
+                    </div>
+             
+ 
+                </div>
+            </div>
+
+            <div class="banner_text">
+                <h1>Долго, дорого, богато!</h1>
+                <button data-key="section" id="catalogBtn">каталог изделий </button>
+                <script>
+                    document.getElementById("catalogBtn").addEventListener("click", function () {
+                     window.scrollTo({
+                    top: 1000,
+                    behavior: "smooth",
+                    });
+                    });
+                </script>
+            </div>
+            <div class="sponsors">
+                
+                
+
+                      <img src="Rectangle 2.png" alt="promotion">
+                <div class="divider"></div>
+                <img src="Rectangle 2.png" alt="promotion">
+                <div class="divider"></div>
+                <img src="Rectangle 2.png" alt="promotion">
+                <div class="divider"></div>
+                <img src="Rectangle 2.png" alt="promotion">
+                <div class="divider"></div>
+                <img src="Rectangle 2.png" alt="promotion">
+                <div class="divider"></div>
+                <img src="Rectangle 2.png" alt="promotion">
+    
+
+                  
+                
+
+            </div>
+        </div>
+        <div class="products">
+           <p>К мероприятиям</p>
+           <h2>Настоящая красота здесь!</h2>
+
+          <div class="category-buttons">
+             <button class="active">Свадьба</button>
+             <button>Мужу</button>
+             <button>Жене</button>
+             <button>Партнеру</button>
+             <button>Коллекции</button>
+             <button>Редкость</button>
+          </div>
+
+          <div class="product-grid">
+             <div class="product-item">
+                  <img src="second-screen__category-item (1).png" alt="Кольца">
+                  <img src="second-screen__category-item (2).png" alt="Серьги">
+                  <img src="second-screen__category-item (3).png" alt="Подвески">
+       
+              </div>
+
+              <div class="product-item1">
+                 <img src="second-screen__category-item (4).png" alt="Запонки">
+                 <img src="second-screen__category-item (5).png" alt="Браслеты">
+                 <img src="second-screen__category-item.png" alt="Часы">
+              </div>
+     
+          </div>
+        </div>
+        <div class="help-block">
+                    <h4>Не знаете, что выбрать?</h4>
+                    <h1>Посетите наши салоны в Москве</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar. Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim. Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus. Pharetra lorem sem purus nisi libero viverra ipsum.</p>
+                    <button id="myButton">наши салоны</button>
+        </div>
+        <div class="promotion">
+            <h4>Полезные статьи</h4>
+            <h1>Лучшие советы по подбору дорогих подарков</h1>
+            <div class="promotion-products">
+                <img src="Gold ring.png" alt="Gold ring">
+            <img src="Hair vine.png" alt="Hair vine">
+            <img src="Bracelet.png" alt="Bracelet">
+            </div>
+            
+            <button>читать наш блог</button>
+        </div>
+        <div class="commercial">
+            <h4>#ojjo_jewerly</h4>
+            <h1>Мы в социальных сетях</h1>
+            <div class="commercial-products">
+                <div class="commercial-products_top">
+                    <video autoplay muted loop playsinline>
+                         <source src="two rings.mp4" type="video/mp4">
+                    </video>
+                    <img src="whale.jpg" alt="whale">
+                    <img src="briliand.png" alt="briliand">
+                </div>
+                <div class="commercial-products_bottom">
+                    <img src="marry ring.png" alt="marry ring">
+                    <img src="gold oclock.png" alt="gold oclock">
+                    <video autoplay muted loop playsinline>
+                         <source src="gold ringsss.mp4" type="video/mp4">
+                   </video>
+                </div>
+            
+            
+            </div>
+           
+        </div>
+        <div class="footer-contact">
+            <h4>Полезные советы и персональный предложения</h4>
+            <h1>Эксклюзивная рассылка</h1>
+            
+            <div class="footer-links">
+               <ul class="features">
+                   <li><a href="#">Личный менеджер</a></li>
+                   <li><a href="#">Доставка и оформление</a></li>
+                    <li><a href="#">Индивидуальный дизайн</a></li>
+              </ul>
+
+                <form class="email-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">отправить</button>
+                </form>
+            </div>
+        </div>
+       <footer class="site-footer">
+  <div class="container">
+    <div class="footer-columns">
+      
+      <div class="footer-column">
+        <h4>ПОЛЕЗНЫЕ ССЫЛКИ</h4>
+        <ul>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Акции</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>ОПЛАТА</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" class="card-icon">
+      </div>
+
+      <div class="footer-column">
+        <h4>КОНТАКТЫ</h4>
+        <p>📞 8 (812) 234–56–55</p>
+        <p>📞 8 (812) 234–56–55</p>
+        <p>📧 ojjo@ojjo.ru</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>СОЦИАЛЬНЫЕ СЕТИ</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="social-icons">
+          <span>▶</span>
+          <span>VK</span>
+          <span>F</span>
+          <span>✈</span>
+          <span>E</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2020 OJJO jewelry</p>
+      <p>Договор публичной офферты</p>
+      <p>Контрагентам</p>
+      <p><a href="#">Сделано Figma.info</a></p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+  
+           
+           
+           
+          
+    
+           
